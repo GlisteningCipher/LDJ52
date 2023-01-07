@@ -10,6 +10,7 @@ public class BGScroll : MonoBehaviour
     [SerializeField] Transform CameraTransform;
     [SerializeField] float MinXPos;
     [SerializeField] float MaxXPos;
+    [SerializeField] float ScreensWide = 1f;
 
     [Range(0f,1f)]
     public float Scroll;
@@ -21,9 +22,12 @@ public class BGScroll : MonoBehaviour
 
     void Update()
     {
-        if (!Background || !CameraTransform) return;
-        Scroll = (CameraTransform.position.x - MinXPos) / (MaxXPos - MinXPos);
+        if (!Background) return;
 
-        Background.uvRect = new Rect(Scroll / 2f, 0f, 0.5f, 1f) ;
+        if (CameraTransform)
+            Scroll = (CameraTransform.position.x - MinXPos) / (MaxXPos - MinXPos);
+
+        var width = 1 / ScreensWide;
+        Background.uvRect = new Rect((1-width) * Scroll, 0f, width, 1f);
     }
 }
