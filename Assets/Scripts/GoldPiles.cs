@@ -8,7 +8,9 @@ public class GoldPiles : MonoBehaviour
     [SerializeField] List<GoldPickup> _goldPiles;
     [SerializeField] List<GoldPickup> _goldPilesRemaining;
     [SerializeField] PlayerController player;
-    int[] goldValues = { 10, 25, 50 };
+
+    [SerializeField] GameObject[] goldPrefabs;
+    [SerializeField] Transform[] goldSpawns;
 
     void OnEnable()
     {
@@ -30,11 +32,19 @@ public class GoldPiles : MonoBehaviour
     [ContextMenu("AutoFill GoldPickups")]
     void AutoFillCollectibles()
     {
+        List<Transform> spawns = goldSpawns.ToList();
+        for(int i = 0; i < 7; i++)
+        {
+            GameObject g = Instantiate(goldPrefabs[Random.Range(0, goldPrefabs.Length)], gameObject.transform);
+            Transform pos = spawns[Random.Range(0, spawns.Count)];
+            g.transform.position = pos.position;
+            g.GetComponent<SpriteRenderer>().sortingOrder = pos.GetComponent<SpriteRenderer>().sortingOrder;
+            spawns.Remove(pos);
+        }
+        
         foreach (Transform g in transform)
         {
             if (Random.Range(0f, 1f) > 0.71f) Destroy(g.gameObject);
-            else
-                g.GetComponent<GoldPickup>().value = goldValues[Random.Range(0,goldValues.Length)];
         }
 
         _goldPiles = GetComponentsInChildren<GoldPickup>().ToList();
