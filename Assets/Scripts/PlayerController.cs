@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float verticalSpeed;
     [SerializeField] float horizontalSpeed;
     [SerializeField] AlertBar alertBar;
-    [SerializeField] int goldCollected;
     [SerializeField] Wallet wallet;
     [SerializeField] Animator anim;
     [SerializeField] SpriteRenderer sprite;
@@ -39,14 +38,13 @@ public class PlayerController : MonoBehaviour
         if (rb.velocity.x > 0) sprite.flipX = true;
         else if (rb.velocity.x < 0) sprite.flipX = false;
 
-        //walk noise + goldCollected
         alertBar.Increase((Mathf.Abs(rb.velocity.x + rb.velocity.y)) / 100);
     }
 
     public void CollectGold(int gold)
     {
-        Debug.Log("Picked up " + gold + " gold");
+        Debug.Log("Collected " + gold + " gold!");
         wallet.AddLairGold(gold);
-        alertBar.Increase(goldCollected / 4);
+        alertBar.Increase(gold / 4);
     }
 }
