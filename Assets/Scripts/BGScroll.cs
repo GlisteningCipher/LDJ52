@@ -22,7 +22,6 @@ public class BGScroll : MonoBehaviour
     void Update()
     {
         if (!Background || !CameraTransform) return;
-        CameraTransform.position = new Vector3(Mathf.Clamp(CameraTransform.position.x, MinXPos, MaxXPos), 0f, -10f);
         Scroll = (CameraTransform.position.x - MinXPos) / (MaxXPos - MinXPos);
 
         Background.uvRect = new Rect(Scroll / 2f, 0f, 0.5f, 1f) ;
