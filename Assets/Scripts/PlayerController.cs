@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float horizontalSpeed;
     [SerializeField] AlertBar alertBar;
     [SerializeField] int goldCollected;
+    [SerializeField] Wallet wallet;
 
     Rigidbody2D rb;
     Vector2 input;
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour
     public void CollectGold(int gold)
     {
         Debug.Log("Picked up " + gold + " gold");
-        goldCollected += gold;
+        wallet.AddLairGold(gold);
         alertBar.Increase(goldCollected / 4);
     }
 }

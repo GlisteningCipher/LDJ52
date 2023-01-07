@@ -1349,6 +1349,7 @@ MonoBehaviour:
   horizontalSpeed: 500
   alertBar: {fileID: 473043657}
   goldCollected: 0
+  wallet: {fileID: 11400000, guid: 077dee6b9b4492b468ed70dd9539ddcc, type: 2}
 --- !u!212 &907728912
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1747,6 +1748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HomeScene: {fileID: 102900000, guid: 9d1e1f42d5e6673488cd1ab5304ad90e, type: 3}
+  Wallet: {fileID: 11400000, guid: 077dee6b9b4492b468ed70dd9539ddcc, type: 2}
 --- !u!1 &1297584611
 GameObject:
   m_ObjectHideFlags: 3
