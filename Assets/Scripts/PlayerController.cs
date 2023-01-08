@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     Vector2 input;
 
     bool isWalking => input != Vector2.zero;
+    bool isFrozen = false;
 
     void Awake()
     {
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetBool("isWalking", isWalking);
 
-        if (!isWalking) return;
+        if (!isWalking || isFrozen) return;
 
         var force = new Vector2(horizontalSpeed, verticalSpeed) * input;
         rb.AddForce(force);
@@ -50,5 +51,10 @@ public class PlayerController : MonoBehaviour
         wallet.AddLairGold(gold);
         alertBar.Increase(gold / 4);
         rb.drag = baseDrag + (maxDrag-baseDrag) * wallet.EncumbermentFactor;
+    }
+
+    public void FrozenPlayer(bool f)
+    {
+        isFrozen = f;
     }
 }

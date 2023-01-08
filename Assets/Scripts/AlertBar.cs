@@ -10,6 +10,7 @@ public class AlertBar : MonoBehaviour
     Slider alertBar;
 
     [SerializeField] GameObject dragon;
+    [SerializeField] DragonController dragonController;
     [SerializeField] GameObject player;
 
     [Header("Debug Vars")]
@@ -26,7 +27,8 @@ public class AlertBar : MonoBehaviour
     {
         if(alertness >= 100)
         {
-            Debug.Log("DRAGON WAKES UP");
+            dragonController.WakeUp();
+            //player.GetComponent<PlayerController>().FrozenPlayer(true);
         }
 
         //Debug.Log(distanceToDragon());
