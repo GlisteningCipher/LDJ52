@@ -1281,12 +1281,9 @@ MonoBehaviour:
   dragon: {fileID: 760972611}
   dragonController: {fileID: 611354692}
   player: {fileID: 907728909}
-<<<<<<< Updated upstream
   globals: {fileID: 11400000, guid: 2e66629859c84af4abf9e08129b1ca9e, type: 2}
   debug: 0
-=======
   gameOverAnim: {fileID: 495275076}
->>>>>>> Stashed changes
 --- !u!114 &473043658
 MonoBehaviour:
   m_ObjectHideFlags: 0
