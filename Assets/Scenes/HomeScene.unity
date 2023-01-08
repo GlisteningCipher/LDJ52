@@ -2074,6 +2074,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 456cc8eabd155134e8dd8a44774ebf7e, type: 2}
   UpgradeUI:
   - {fileID: 886178529}
+  buySFX:
+    Guid:
+      Data1: 604741355
+      Data2: 1110460313
+      Data3: 784138132
+      Data4: 2067342689
+    Path: event:/SFX/Paying
 --- !u!4 &1275872935
 Transform:
   m_ObjectHideFlags: 0

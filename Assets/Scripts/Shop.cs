@@ -1,10 +1,13 @@
 using UnityEngine;
+using FMODUnity;
 
 public class Shop : MonoBehaviour
 {
     [SerializeField] Globals G;
     [SerializeField] Upgrade[] Upgrades;
     [SerializeField] CanvasGroup[] UpgradeUI;
+    
+    [SerializeField] EventReference buySFX;
 
     void Awake()
     {
@@ -31,5 +34,7 @@ public class Shop : MonoBehaviour
     {
         Upgrades[index].Buy();
         Redraw();
+
+        RuntimeManager.PlayOneShot(buySFX);
     }
 }

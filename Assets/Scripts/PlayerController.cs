@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] EventReference walkingSFX;
     [SerializeField] [ParamRef] string reverbParam;
     [SerializeField] Transform reverbAttenuation;
+    int goldSFXLimit;
     EventInstance footstepsSFX;
     float reverbDistance;
 
@@ -48,7 +49,6 @@ public class PlayerController : MonoBehaviour
 
         reverbDistance = (10* (Vector2.Distance(new Vector2 (transform.position.x, 0), new Vector2 (reverbAttenuation.position.x, 0))))*0.2f;
         RuntimeManager.StudioSystem.setParameterByName(reverbParam, reverbDistance);
-        Debug.Log(reverbDistance);
     }
 
     void FixedUpdate()
@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
         if (!IsPlaying(footstepsSFX))
         {
             footstepsSFX = RuntimeManager.CreateInstance(walkingSFX);
+            footstepsSFX.setParameterByName("Weight", goldSFXLimit);
             footstepsSFX.start();
         }
 
@@ -85,6 +86,17 @@ public class PlayerController : MonoBehaviour
         var upperDrag = globals.wellFed ? wellFedMaxDrag : regularMaxDrag;
         var additionalDrag = (upperDrag-baseDrag) * wallet.EncumbermentFactor;
         rb.drag = baseDrag + additionalDrag;
+
+        if(wallet.LairGold <= 100)
+        {
+            goldSFXLimit = wallet.LairGold;
+        } else
+        {
+            goldSFXLimit = 100;
+        }
+        footstepsSFX.setParameterByName("Weight", goldSFXLimit);
+        Debug.Log(goldSFXLimit);
+
     }
 
     public void FrozenPlayer(bool f)
