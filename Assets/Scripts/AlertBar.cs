@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class AlertBar : MonoBehaviour
 {
     [Range(0f, 100f)]
-    [SerializeField] float alertness;
+    [SerializeField] public float alertness;
     Slider alertBar;
 
     [SerializeField] GameObject dragon;
