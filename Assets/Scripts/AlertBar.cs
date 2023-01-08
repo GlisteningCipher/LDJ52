@@ -12,6 +12,7 @@ public class AlertBar : MonoBehaviour
     [SerializeField] GameObject dragon;
     [SerializeField] DragonController dragonController;
     [SerializeField] GameObject player;
+    [SerializeField] Globals globals;
     Coroutine coroutine;
 
     [Header("Debug Vars")]
@@ -76,8 +77,9 @@ public class AlertBar : MonoBehaviour
         yield return new WaitForSeconds(4);
         cc.LookPlayer();
         yield return new WaitForSeconds(2);
-        if (playerController.isPlayerHidden)
+        if (playerController.isPlayerHidden || globals.disguiseUpgrade)
         {
+            if (!playerController.isPlayerHidden) globals.disguiseUpgrade = false; //consume mustache if caught
             cc.LookDragon();
             Decrease(25);
             dragonController.BackToSleep();

@@ -1281,6 +1281,7 @@ MonoBehaviour:
   dragon: {fileID: 760972611}
   dragonController: {fileID: 611354692}
   player: {fileID: 907728909}
+  globals: {fileID: 11400000, guid: 2e66629859c84af4abf9e08129b1ca9e, type: 2}
   debug: 0
 --- !u!114 &473043658
 MonoBehaviour:
