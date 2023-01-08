@@ -114,6 +114,9 @@
 			<destination>{949519f4-0f57-41cd-afe3-79d94182f239}</destination>
 			<destination>{a57bd318-60f5-4f1e-bc93-61df0e8c5c58}</destination>
 		</relationship>
+		<relationship name="playPercentages">
+			<destination>{bcea0639-a611-4374-9c29-4e335b8356b9}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{5c093a6a-9395-4a6f-af0c-27d3aa6b70a5}">
 		<property name="volume">
@@ -141,12 +144,12 @@
 			<destination>{d3a53e41-5f66-4adc-a5f2-b1cbc76333c6}</destination>
 		</relationship>
 		<relationship name="playPercentages">
-			<destination>{88d596e2-425c-4e08-a672-ab2aad84f358}</destination>
+			<destination>{53b8fe17-75e8-4d8b-b86a-e282ea976958}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{3b169c94-0616-40ac-817d-c7891d3c9820}">
 		<property name="volume">
-			<value>-10.5</value>
+			<value>-22</value>
 		</property>
 		<property name="name">
 			<value>Audio 2</value>
@@ -166,7 +169,7 @@
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>0.5</value>
+			<value>0.35000000000000003</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{e77c450b-165e-4828-b073-2426f2b586a4}</destination>
@@ -202,6 +205,14 @@
 			<destination>{0bed622c-0bc9-4194-abed-4baac051e713}</destination>
 		</relationship>
 	</object>
+	<object class="PlayPercentage" id="{bcea0639-a611-4374-9c29-4e335b8356b9}">
+		<property name="percentage">
+			<value>2</value>
+		</property>
+		<relationship name="sound">
+			<destination>{d0c3984d-0793-4dca-a65f-d2b8d8604c9a}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{41050ba4-1d5b-48e7-a2a0-9f925d42d518}">
 		<relationship name="effects">
 			<destination>{ae6f86de-a3be-453c-96e1-0a531ff56fdd}</destination>
@@ -214,7 +225,7 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{d3a53e41-5f66-4adc-a5f2-b1cbc76333c6}" />
-	<object class="PlayPercentage" id="{88d596e2-425c-4e08-a672-ab2aad84f358}">
+	<object class="PlayPercentage" id="{53b8fe17-75e8-4d8b-b86a-e282ea976958}">
 		<property name="percentage">
 			<value>2</value>
 		</property>

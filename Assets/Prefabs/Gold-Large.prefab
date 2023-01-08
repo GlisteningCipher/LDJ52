@@ -99,6 +99,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 50
+  coinSFX:
+    Guid:
+      Data1: -2132878308
+      Data2: 1295720385
+      Data3: -489160277
+      Data4: 1456999629
+    Path: event:/SFX/BigCoins
 --- !u!61 &8817597724068330097
 BoxCollider2D:
   m_ObjectHideFlags: 0

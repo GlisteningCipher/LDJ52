@@ -1,6 +1,9 @@
 // using System.Collections;
 // using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
+using DG.Tweening;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -19,6 +22,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float wellFedMaxDrag = 300f;
     [SerializeField] float regularMaxDrag = 500f;
 
+    [Header("SFX")]
+    [SerializeField] EventReference walkingSFX;
+    [SerializeField] [ParamRef] string reverbParam;
+    [SerializeField] Transform reverbAttenuation;
+    EventInstance footstepsSFX;
+    float reverbDistance;
+
+
     Rigidbody2D rb;
     Vector2 input;
 
@@ -30,16 +41,33 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+
     void Update()
     {
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+
+        reverbDistance = (10* (Vector2.Distance(new Vector2 (transform.position.x, 0), new Vector2 (reverbAttenuation.position.x, 0))))*0.2f;
+        RuntimeManager.StudioSystem.setParameterByName(reverbParam, reverbDistance);
+        Debug.Log(reverbDistance);
     }
 
     void FixedUpdate()
     {
         anim.SetBool("isWalking", isWalking);
+            
+        
+        if (!isWalking || isFrozen)
+        {
+            footstepsSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            footstepsSFX.release();
+            return;
+        }
 
-        if (!isWalking || isFrozen) return;
+        if (!IsPlaying(footstepsSFX))
+        {
+            footstepsSFX = RuntimeManager.CreateInstance(walkingSFX);
+            footstepsSFX.start();
+        }
 
         var force = new Vector2(horizontalSpeed, verticalSpeed) * input;
         rb.AddForce(force);
@@ -62,5 +90,17 @@ public class PlayerController : MonoBehaviour
     public void FrozenPlayer(bool f)
     {
         isFrozen = f;
+    }
+    bool IsPlaying(EventInstance instance)
+    {
+        PLAYBACK_STATE state;
+        instance.getPlaybackState(out state);
+        return state != PLAYBACK_STATE.STOPPED;
+    }
+
+    private void OnDisable()
+    {
+        footstepsSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        footstepsSFX.release();
     }
 }

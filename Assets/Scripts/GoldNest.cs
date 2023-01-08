@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 public class GoldNest : MonoBehaviour
 {
@@ -8,11 +10,14 @@ public class GoldNest : MonoBehaviour
     [SerializeField] PlayerController pl;
     [SerializeField] GameObject canvas;
 
+    [SerializeField] EventReference goldSFX;
+
     void Update()
     {
         if (atTheNest && Input.GetButtonDown("Fire1"))
         {
             pl.CollectGold(Random.Range(0f, 1f) > .5f ? 25 : 50);
+            RuntimeManager.PlayOneShotAttached(goldSFX, gameObject);
         }
     }
 

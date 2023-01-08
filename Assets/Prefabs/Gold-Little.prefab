@@ -99,6 +99,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 10
+  coinSFX:
+    Guid:
+      Data1: -137811952
+      Data2: 1125018335
+      Data3: 68756393
+      Data4: 1177662546
+    Path: event:/SFX/SmallCoins
 --- !u!61 &8984825779143517936
 BoxCollider2D:
   m_ObjectHideFlags: 0
