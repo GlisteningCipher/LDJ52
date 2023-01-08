@@ -6,6 +6,7 @@ public class GoldNest : MonoBehaviour
 {
     bool atTheNest = false;
     [SerializeField] PlayerController pl;
+    [SerializeField] GameObject canvas;
 
     void Update()
     {
@@ -17,13 +18,13 @@ public class GoldNest : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Show 'Press E' Dialog");
+        canvas.SetActive(true);
         atTheNest = true;
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Dismiss 'Press E' Dialog");
+        canvas.SetActive(false);
         atTheNest = false;
     }
 }
