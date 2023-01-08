@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AlertBar : MonoBehaviour
 {
@@ -15,8 +16,7 @@ public class AlertBar : MonoBehaviour
     [SerializeField] Globals globals;
     Coroutine coroutine;
 
-    [Header("Debug Vars")]
-    [SerializeField] bool debug;
+    [SerializeField] Animator gameOverAnim;
 
     void Awake()
     {
@@ -91,8 +91,10 @@ public class AlertBar : MonoBehaviour
         }
         else
         {
-            //fucked
             Debug.Log("GAME OVER");
+            gameOverAnim.SetBool("isGameOver", true);
+            yield return new WaitForSeconds(1);
+            SceneManager.LoadScene("GameOverScene");
         }
         coroutine = null;
         yield return null;
