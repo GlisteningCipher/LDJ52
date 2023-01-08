@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using FMODUnity;
 
 public class Shop : MonoBehaviour
@@ -17,6 +18,18 @@ public class Shop : MonoBehaviour
     void Start()
     {
         Redraw();
+        AddListeners();
+    }
+
+    public void AddListeners()
+    {
+        for (int i = 0; i < Upgrades.Length; i++)
+        {
+            var ui = UpgradeUI[i];
+            var button = ui.GetComponentInChildren<Button>();
+            int j = i; //need to allocate new int
+            button.onClick.AddListener(()=>PurchaseUpgrade(j));
+        }
     }
 
     [ContextMenu("Redraw")]

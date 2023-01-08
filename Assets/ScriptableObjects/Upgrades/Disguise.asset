@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 682de4d4ecce77f4c920dd4218f9e996, type: 3}
-  m_Name: Player Wallet
+  m_Script: {fileID: 11500000, guid: 28747ad28094f6047ac3d8b1ee0326e4, type: 3}
+  m_Name: Disguise
   m_EditorClassIdentifier: 
-  G: {fileID: 11400000, guid: 2e66629859c84af4abf9e08129b1ca9e, type: 2}
-  HomeGold: 0
-  LairGold: 0
-  SmallWallet: 500
-  MediumWallet: 750
-  BiggestWallet: 1000
+  globals: {fileID: 11400000, guid: 2e66629859c84af4abf9e08129b1ca9e, type: 2}
+  wallet: {fileID: 11400000, guid: 077dee6b9b4492b468ed70dd9539ddcc, type: 2}
+  Price: 0

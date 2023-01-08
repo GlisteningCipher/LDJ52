@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05446c23f97cc0489a8235c631b714c, type: 3}
   m_Name: Globals
   m_EditorClassIdentifier: 
-  suspicion: 148
+  suspicion: 173
   wellFed: 0
   disguiseUpgrade: 0
   speedUpgrade: 0
@@ -21,3 +21,4 @@ MonoBehaviour:
   intuitionUpgrade: 0
   walletUpgrade1: 0
   walletUpgrade2: 0
+  questIndex: 0
