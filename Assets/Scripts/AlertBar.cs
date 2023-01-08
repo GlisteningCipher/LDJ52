@@ -29,7 +29,8 @@ public class AlertBar : MonoBehaviour
             Debug.Log("DRAGON WAKES UP");
         }
 
-        if(!debug) toggleVisibility(distanceToDragon() <= 15 ? true : false);
+        //Debug.Log(distanceToDragon());
+        if(!debug) toggleVisibility(distanceToDragon() <= 20 ? true : false);
     }
 
     float distanceToDragon()
