@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{1068fb1c-0ed0-4fb7-af94-f594a21a4dfa}">
+		<property name="name">
+			<value>BagType</value>
+		</property>
+		<relationship name="folder">
+			<destination>{49c4c712-9f41-4567-9b91-4648dbc60e32}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{02a002ba-0ac3-45b3-a271-ac4f27795450}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{02a002ba-0ac3-45b3-a271-ac4f27795450}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

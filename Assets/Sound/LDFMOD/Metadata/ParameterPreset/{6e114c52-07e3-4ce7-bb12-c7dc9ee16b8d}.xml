@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{6e114c52-07e3-4ce7-bb12-c7dc9ee16b8d}">
+		<property name="name">
+			<value>CaveDeepness</value>
+		</property>
+		<relationship name="folder">
+			<destination>{49c4c712-9f41-4567-9b91-4648dbc60e32}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{c15fb8fd-f997-4f10-95aa-d84f5b3c2222}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{c15fb8fd-f997-4f10-95aa-d84f5b3c2222}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
