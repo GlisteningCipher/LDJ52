@@ -1,0 +1,19 @@
+{59afc962-ffc3-4443-819f-4b0945a9a7d6} bank:/Master
+{c1b2e9b6-8eb8-0801-07d6-c1f7b45aa14e} bank:/Master.strings
+{efd7e452-b159-4aa9-a333-395f06bc087e} bus:/
+{2a4060be-34e8-40e9-aba6-d122d9315e32} bus:/BGM
+{ef47b2d3-4938-4c64-9b75-fc0dd483f9a6} bus:/Reverb
+{cbee07f1-49c9-4bcd-a206-157ecd9fe22a} bus:/SFX
+{b819b927-fe5a-46fe-b1e0-03c5fdcb153f} event:/BGM/DragonZone
+{e09cc31e-b78f-4417-8420-128fade04787} event:/BGM/Market
+{80dedc1c-1fc1-4d3b-ab01-d8e2cd0cd856} event:/SFX/BigCoins
+{a99dee99-f06e-4c92-80ca-a99b9945bc0d} event:/SFX/DragonSounds
+{12e0cac7-c3c1-4d03-bc6a-ff5677a5e89d} event:/SFX/FootSteps
+{539fd69d-ea44-4532-9bab-c0e1b541b8d2} event:/SFX/MediumCoins
+{240b9eeb-4799-4230-94ff-bc2e6125397b} event:/SFX/Paying
+{f7c92810-6adf-430e-a923-190452b43146} event:/SFX/SmallCoins
+{c15fb8fd-f997-4f10-95aa-d84f5b3c2222} parameter:/CaveDeepness
+{e7e17b0a-c46c-4de1-839f-70bc4211d521} parameter:/Dragons Awareness
+{a61598cb-9324-490d-ae25-d2a3f04c6bd4} parameter:/Weight
+{046a8365-6272-42ad-b5cb-95470f300c43} vca:/BGM VCA
+{b946f642-94b6-435c-9eda-c0b361aafb63} vca:/SFX VCA

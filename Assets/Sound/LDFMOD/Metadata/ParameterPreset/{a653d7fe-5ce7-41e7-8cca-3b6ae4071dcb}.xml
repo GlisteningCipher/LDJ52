@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{a653d7fe-5ce7-41e7-8cca-3b6ae4071dcb}">
+		<property name="name">
+			<value>Dragons Awareness</value>
+		</property>
+		<relationship name="folder">
+			<destination>{49c4c712-9f41-4567-9b91-4648dbc60e32}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e7e17b0a-c46c-4de1-839f-70bc4211d521}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e7e17b0a-c46c-4de1-839f-70bc4211d521}">
+		<property name="maximum">
+			<value>75</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
