@@ -8,6 +8,8 @@ public class Wallet : ScriptableObject
     public int HomeGold;
     public int LairGold;
     public int PocketSize = 500;
+    
+    public float EncumbermentFactor => (float)LairGold / (float)PocketSize;
 
     void OnEnable()
     {

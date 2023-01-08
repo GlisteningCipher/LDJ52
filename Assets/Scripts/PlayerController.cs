@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] SpriteRenderer sprite;
 
+    [SerializeField] float baseDrag = 100f;
+    [SerializeField] float maxDrag = 500f;
+
     Rigidbody2D rb;
     Vector2 input;
 
@@ -46,5 +49,6 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Collected " + gold + " gold!");
         wallet.AddLairGold(gold);
         alertBar.Increase(gold / 4);
+        rb.drag = baseDrag + (maxDrag-baseDrag) * wallet.EncumbermentFactor;
     }
 }
