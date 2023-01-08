@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float baseDrag = 100f;
     [SerializeField] float wellFedMaxDrag = 300f;
     [SerializeField] float regularMaxDrag = 500f;
+    [SerializeField] float speedUpgradeMultiplier = 1.5f;
 
     [Header("SFX")]
     [SerializeField] EventReference walkingSFX;
@@ -74,7 +75,7 @@ public class PlayerController : MonoBehaviour
             footstepsSFX.start();
         }
 
-        var force = new Vector2(horizontalSpeed, verticalSpeed) * input;
+        var force = new Vector2(horizontalSpeed, verticalSpeed) * input * (globals.speedUpgrade ? speedUpgradeMultiplier : 1f);
         rb.AddForce(force);
         if (rb.velocity.x > 0) sprite.flipX = true;
         else if (rb.velocity.x < 0) sprite.flipX = false;
