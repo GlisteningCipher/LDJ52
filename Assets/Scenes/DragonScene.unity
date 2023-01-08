@@ -1282,7 +1282,6 @@ MonoBehaviour:
   dragonController: {fileID: 611354692}
   player: {fileID: 907728909}
   globals: {fileID: 11400000, guid: 2e66629859c84af4abf9e08129b1ca9e, type: 2}
-  debug: 0
   gameOverAnim: {fileID: 495275076}
 --- !u!114 &473043658
 MonoBehaviour:
@@ -1558,9 +1557,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130e598497882f0428e85694bf1c4fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Globals: {fileID: 11400000, guid: 2e66629859c84af4abf9e08129b1ca9e, type: 2}
   PlayerCamera: {fileID: 397642977}
   DragonCamera: {fileID: 1105459716}
+  Brain: {fileID: 519420033}
   LookButton: Jump
+  NormalBlendTime: 1.5
+  FasterBlendTime: 0.75
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2676,6 +2679,7 @@ MonoBehaviour:
   baseDrag: 100
   wellFedMaxDrag: 300
   regularMaxDrag: 500
+  speedUpgradeMultiplier: 1.5
   walkingSFX:
     Guid:
       Data1: 316721863
