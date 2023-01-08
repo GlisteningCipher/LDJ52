@@ -28,7 +28,7 @@ public class AlertBar : MonoBehaviour
         if(alertness >= 100)
         {
             dragonController.WakeUp();
-            //player.GetComponent<PlayerController>().FrozenPlayer(true);
+            player.GetComponent<PlayerController>().FrozenPlayer(true);
         }
 
         //Debug.Log(distanceToDragon());

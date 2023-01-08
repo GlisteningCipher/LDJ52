@@ -18,7 +18,7 @@ public class GoldNest : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        canvas.SetActive(true);
+        canvas.SetActive(true); //this defaults to true so the player sees it when they approach every single time
         atTheNest = true;
     }
 
