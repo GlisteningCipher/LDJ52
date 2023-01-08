@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float wellFedMaxDrag = 300f;
     [SerializeField] float regularMaxDrag = 500f;
     [SerializeField] float speedUpgradeMultiplier = 1.5f;
+    [SerializeField, Range(0f,1f)] float quietMultiplier = 0.5f;
 
     [Header("SFX")]
     [SerializeField] EventReference walkingSFX;
@@ -80,7 +81,9 @@ public class PlayerController : MonoBehaviour
         if (rb.velocity.x > 0) sprite.flipX = true;
         else if (rb.velocity.x < 0) sprite.flipX = false;
 
-        alertBar.Increase((Mathf.Abs(rb.velocity.x + rb.velocity.y)) / 100);
+        var alertGenerated = (Mathf.Abs(rb.velocity.x + rb.velocity.y)) / 100;
+        if (globals.quietUpgrade) alertGenerated *= quietMultiplier;
+        alertBar.Increase(alertGenerated);
     }
 
     public void CollectGold(int gold)
