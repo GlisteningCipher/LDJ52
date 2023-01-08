@@ -4,16 +4,20 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
-{
-    [SerializeField] float verticalSpeed;
-    [SerializeField] float horizontalSpeed;
+{   
+    [Header("References")]
     [SerializeField] AlertBar alertBar;
     [SerializeField] Wallet wallet;
+    [SerializeField] Globals globals;
     [SerializeField] Animator anim;
     [SerializeField] SpriteRenderer sprite;
 
+    [Header ("Speed Settings")]
+    [SerializeField] float verticalSpeed;
+    [SerializeField] float horizontalSpeed;
     [SerializeField] float baseDrag = 100f;
-    [SerializeField] float maxDrag = 500f;
+    [SerializeField] float wellFedMaxDrag = 300f;
+    [SerializeField] float regularMaxDrag = 500f;
 
     Rigidbody2D rb;
     Vector2 input;
@@ -50,7 +54,9 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Collected " + gold + " gold!");
         wallet.AddLairGold(gold);
         alertBar.Increase(gold / 4);
-        rb.drag = baseDrag + (maxDrag-baseDrag) * wallet.EncumbermentFactor;
+        var upperDrag = globals.wellFed ? wellFedMaxDrag : regularMaxDrag;
+        var additionalDrag = (upperDrag-baseDrag) * wallet.EncumbermentFactor;
+        rb.drag = baseDrag + additionalDrag;
     }
 
     public void FrozenPlayer(bool f)

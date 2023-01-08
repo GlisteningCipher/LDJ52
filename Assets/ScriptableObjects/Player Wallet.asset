@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 682de4d4ecce77f4c920dd4218f9e996, type: 3}
   m_Name: Player Wallet
   m_EditorClassIdentifier: 
-  HomeGold: 0
+  G: {fileID: 11400000, guid: 2e66629859c84af4abf9e08129b1ca9e, type: 2}
+  HomeGold: 170
   LairGold: 0
+  SmallWallet: 500
+  MediumWallet: 750
+  BiggestWallet: 1000

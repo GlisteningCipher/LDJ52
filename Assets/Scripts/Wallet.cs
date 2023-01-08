@@ -5,10 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Wallet", fileName = "New Wallet")]
 public class Wallet : ScriptableObject
 {
+    [SerializeField] Globals G;
     public int HomeGold;
     public int LairGold;
-    public int PocketSize = 500;
-    
+    public int SmallWallet = 500;
+    public int MediumWallet = 750;
+    public int BiggestWallet = 1000;
+    public int PocketSize => G.walletUpgrade2 ? BiggestWallet : G.walletUpgrade1 ? MediumWallet : SmallWallet;
+
     public float EncumbermentFactor => (float)LairGold / (float)PocketSize;
 
     void OnEnable()

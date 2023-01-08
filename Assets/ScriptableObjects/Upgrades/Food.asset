@@ -9,15 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f05446c23f97cc0489a8235c631b714c, type: 3}
-  m_Name: Globals
+  m_Script: {fileID: 11500000, guid: 3f37d46f499499044bf5f5059528a57f, type: 3}
+  m_Name: Food
   m_EditorClassIdentifier: 
-  suspicion: 148
-  wellFed: 0
-  disguiseUpgrade: 0
-  speedUpgrade: 0
-  quietUpgrade: 0
-  sightUpgrade: 0
-  intuitionUpgrade: 0
-  walletUpgrade1: 0
-  walletUpgrade2: 0
+  globals: {fileID: 11400000, guid: 2e66629859c84af4abf9e08129b1ca9e, type: 2}
+  wallet: {fileID: 11400000, guid: 077dee6b9b4492b468ed70dd9539ddcc, type: 2}
+  Price: 0
