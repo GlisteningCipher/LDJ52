@@ -12,6 +12,7 @@ public class AlertBar : MonoBehaviour
     [SerializeField] GameObject dragon;
     [SerializeField] DragonController dragonController;
     [SerializeField] GameObject player;
+    Coroutine coroutine;
 
     [Header("Debug Vars")]
     [SerializeField] bool debug;
@@ -20,19 +21,18 @@ public class AlertBar : MonoBehaviour
     {
         alertBar = GetComponent<Slider>();
         alertBar.value = 0f;
-        toggleVisibility(debug ? true : false);
+        //toggleVisibility(debug ? true : false);
     }
 
     void Update()
     {
         if(alertness >= 100)
         {
-            dragonController.WakeUp();
-            player.GetComponent<PlayerController>().FrozenPlayer(true);
+            Alert();
         }
 
         //Debug.Log(distanceToDragon());
-        if(!debug) toggleVisibility(distanceToDragon() <= 20 ? true : false);
+        //if(!debug) toggleVisibility(distanceToDragon() <= 20 ? true : false);
     }
 
     float distanceToDragon()
@@ -50,5 +50,49 @@ public class AlertBar : MonoBehaviour
     {
         alertness += (a);
         alertBar.value = alertness;
+    }
+
+    void Decrease(float a)
+    {
+        alertness -= (a);
+        alertBar.value = alertness;
+    }
+
+    void Alert()
+    {
+        if (coroutine == null)
+            coroutine = StartCoroutine(DragonAlert());
+    }
+
+    IEnumerator DragonAlert()
+    {
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        CameraController cc = Camera.main.GetComponent<CameraController>();
+        cc.Alert(true);
+
+        playerController.FrozenPlayer(true);
+        cc.LookDragon();
+        dragonController.WakeUp();
+        yield return new WaitForSeconds(4);
+        cc.LookPlayer();
+        yield return new WaitForSeconds(2);
+        if (playerController.isPlayerHidden)
+        {
+            cc.LookDragon();
+            Decrease(25);
+            dragonController.BackToSleep();
+            yield return new WaitForSeconds(2);
+            playerController.FrozenPlayer(false);
+            cc.LookPlayer();
+            cc.Alert(false);
+            yield return null;
+        }
+        else
+        {
+            //fucked
+            Debug.Log("GAME OVER");
+        }
+        coroutine = null;
+        yield return null;
     }
 }

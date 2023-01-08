@@ -15,8 +15,7 @@ public class GoldPickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        var pl = col.GetComponent<PlayerController>();
-        if (col)
+        if (col.GetComponent<PlayerController>())
         {
             OnPickup?.Invoke(this);
             gameObject.SetActive(false);

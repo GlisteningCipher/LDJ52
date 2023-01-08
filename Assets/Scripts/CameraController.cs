@@ -1,5 +1,4 @@
-// using System.Collections;
-// using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using Cinemachine;
 
@@ -8,6 +7,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera PlayerCamera;
     [SerializeField] CinemachineVirtualCamera DragonCamera;
     [SerializeField] string LookButton = "Jump";
+    bool alerted = false;
 
     public void LookPlayer()
     {
@@ -23,14 +23,17 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown(LookButton))
+        if(!alerted)
         {
-            LookDragon();
+            if (Input.GetButtonDown(LookButton))
+                LookDragon();
+            if (Input.GetButtonUp(LookButton))
+                LookPlayer();
         }
+    }
 
-        if (Input.GetButtonUp(LookButton))
-        {
-            LookPlayer();
-        }
+    public void Alert(bool a)
+    {
+        alerted = a;
     }
 }

@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Globals globals;
     [SerializeField] Animator anim;
     [SerializeField] SpriteRenderer sprite;
+    [SerializeField] GameObject hiddenIcon;
+    public bool isPlayerHidden = false;
 
     [Header ("Speed Settings")]
     [SerializeField] float verticalSpeed;
@@ -40,6 +42,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        hiddenIcon.SetActive(false);
     }
 
 
@@ -49,6 +52,7 @@ public class PlayerController : MonoBehaviour
 
         reverbDistance = (10* (Vector2.Distance(new Vector2 (transform.position.x, 0), new Vector2 (reverbAttenuation.position.x, 0))))*0.2f;
         RuntimeManager.StudioSystem.setParameterByName(reverbParam, reverbDistance);
+        //Debug.Log(reverbDistance);
     }
 
     void FixedUpdate()
@@ -114,5 +118,11 @@ public class PlayerController : MonoBehaviour
     {
         footstepsSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         footstepsSFX.release();
+    }
+
+    public void isHidden(bool h)
+    {
+        isPlayerHidden = h;
+        hiddenIcon.SetActive(isPlayerHidden);
     }
 }
