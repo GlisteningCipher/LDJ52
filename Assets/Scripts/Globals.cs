@@ -16,8 +16,11 @@ public class Globals : ScriptableObject
     public bool walletUpgrade1 = false; //medium sized wallet
     public bool walletUpgrade2 = false; //full sized wallet
 
+    public int questIndex = 0;
+
     void OnEnable()
     {
         wellFed = disguiseUpgrade = speedUpgrade = quietUpgrade = sightUpgrade = intuitionUpgrade = walletUpgrade1 = walletUpgrade2 = false;
+        questIndex = 0;
     }
 }

@@ -803,7 +803,7 @@ GameObject:
   - component: {fileID: 558730559}
   - component: {fileID: 558730558}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Buy Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1371,9 +1371,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hello I need like 1000 gold
+  m_text: 'This is the quest dialogue.
 
-    Please, thank you.'
+    See quest controller for details.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1994,7 +1994,7 @@ GameObject:
   - component: {fileID: 1170845689}
   - component: {fileID: 1170845688}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Pay Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2745,8 +2745,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1748405746}
+  - component: {fileID: 1748405747}
   m_Layer: 0
-  m_Name: Objective Controller
+  m_Name: Quest Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2767,6 +2768,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1748405747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748405745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86691e8089c8fd04d82030e41838c795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  G: {fileID: 11400000, guid: 2e66629859c84af4abf9e08129b1ca9e, type: 2}
+  PlayerWallet: {fileID: 11400000, guid: 077dee6b9b4492b468ed70dd9539ddcc, type: 2}
+  PayButton: {fileID: 1170845688}
+  Dialogue: {fileID: 788024829}
+  QuestList:
+  - Price: 100
+    Dialogue: 'Hello I would like 100 gold.
+
+      Please, thank you!'
+    Response: Thanks for the 100 gold, buddy!
 --- !u!1 &1925966841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2990,6 +3013,7 @@ MonoBehaviour:
   DragonScene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
   HomePanel: {fileID: 1925966842}
   StartingYPos: -1000
+  AnimTime: 0.5
 --- !u!1 &2087546954
 GameObject:
   m_ObjectHideFlags: 0
