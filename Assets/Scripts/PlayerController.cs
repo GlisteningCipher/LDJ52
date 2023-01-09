@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         hiddenIcon.SetActive(false);
-        goldText.text = "000";
+        goldText.text = "0000";
     }
 
 
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log("Collected " + gold + " gold!");
         int g = int.Parse(goldText.text) + gold;
-        goldText.text = g.ToString("D3");
+        goldText.text = g.ToString("D4");
         wallet.AddLairGold(gold);
         alertBar.Increase(gold / 4);
         var upperDrag = globals.wellFed ? wellFedMaxDrag : regularMaxDrag;
