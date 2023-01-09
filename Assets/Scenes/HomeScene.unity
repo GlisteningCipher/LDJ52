@@ -4124,8 +4124,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1545872010}
   m_HandleRect: {fileID: 1545872009}
   m_Direction: 2
-  m_Value: 0.99999964
-  m_Size: 0.625
+  m_Value: 0.9999998
+  m_Size: 0.32107177
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7210,6 +7210,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b82cfc1e4db9c6499b5763faf79cc78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinSFX:
+    Guid:
+      Data1: 1700499750
+      Data2: 1085222242
+      Data3: 515793578
+      Data4: -6095801
+    Path: event:/SFX/Win
 --- !u!1 &1840155831
 GameObject:
   m_ObjectHideFlags: 0
