@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Entrance : MonoBehaviour
 {
+    //SerializeField] Object HomeScene;
     [SerializeField] Wallet Wallet;
     [SerializeField] Globals globals;
 
