@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Globals
   m_EditorClassIdentifier: 
   suspicion: 0
+  suspicionMax: 300
   wellFed: 0
   disguiseUpgrade: 0
   speedUpgrade: 0

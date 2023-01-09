@@ -1359,6 +1359,7 @@ MonoBehaviour:
   dragonController: {fileID: 611354692}
   player: {fileID: 907728909}
   globals: {fileID: 11400000, guid: 2e66629859c84af4abf9e08129b1ca9e, type: 2}
+  wallet: {fileID: 11400000, guid: 077dee6b9b4492b468ed70dd9539ddcc, type: 2}
   gameOverAnim: {fileID: 495275076}
 --- !u!114 &473043658
 MonoBehaviour:

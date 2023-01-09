@@ -32,4 +32,9 @@ public class Wallet : ScriptableObject
         LairGold = 0;
         G.suspicion += LairGold / 4;
     }
+
+    public void ClearLairGold()
+    {
+        LairGold = 0;
+    }
 }

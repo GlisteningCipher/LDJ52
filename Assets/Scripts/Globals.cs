@@ -5,6 +5,7 @@ public class Globals : ScriptableObject
 {
     [Header("Dragon Globals")]
     public int suspicion;// { get; set; }
+    public int suspicionMax;
 
     [Header("Player Globals")]
     public bool wellFed = false; //affects encumberment

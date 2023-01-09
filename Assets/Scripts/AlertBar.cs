@@ -15,6 +15,7 @@ public class AlertBar : MonoBehaviour
     [SerializeField] DragonController dragonController;
     [SerializeField] GameObject player;
     [SerializeField] Globals globals;
+    [SerializeField] Wallet wallet;
     Coroutine coroutine;
 
     [SerializeField] Animator gameOverAnim;
@@ -83,10 +84,18 @@ public class AlertBar : MonoBehaviour
         }
         else
         {
-            //Debug.Log("GAME OVER");
-            gameOverAnim.SetBool("isGameOver", true);
-            yield return new WaitForSeconds(1.5f);
-            SceneManager.LoadScene("GameOverScene");
+            globals.suspicion += 100;
+            if(globals.suspicion >= globals.suspicionMax)
+            {
+                //Debug.Log("GAME OVER");
+                gameOverAnim.SetBool("isGameOver", true);
+                yield return new WaitForSeconds(1.5f);
+                SceneManager.LoadScene("GameOverScene");
+            } else
+            {
+                wallet.ClearLairGold();
+                SceneManager.LoadScene("HomeScene");
+            }
         }
         coroutine = null;
         yield return null;
