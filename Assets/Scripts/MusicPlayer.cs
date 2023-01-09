@@ -22,7 +22,6 @@ public class MusicPlayer : MonoBehaviour
         if (alertBar!=null)
         {
             musicToPlay.setParameterByName("Dragon", alertBar.alertness);
-            Debug.Log(alertBar.alertness);
         }
     }
 

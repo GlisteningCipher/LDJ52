@@ -755,82 +755,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226987805}
   m_CullTransparentMesh: 1
---- !u!1 &239424165
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 239424166}
-  - component: {fileID: 239424168}
-  - component: {fileID: 239424167}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &239424166
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239424165}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1329264670}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: 85}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0, y: 0.5}
---- !u!114 &239424167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239424165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &239424168
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239424165}
-  m_CullTransparentMesh: 1
 --- !u!1 &285214635
 GameObject:
   m_ObjectHideFlags: 0
@@ -4534,7 +4458,7 @@ RectTransform:
   m_Children:
   - {fileID: 503100982}
   m_Father: {fileID: 1329264670}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -5205,7 +5129,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 788024828}
-  - {fileID: 239424166}
   - {fileID: 1170845687}
   m_Father: {fileID: 1925966842}
   m_RootOrder: 1
@@ -6303,6 +6226,7 @@ GameObject:
   - component: {fileID: 1715514353}
   - component: {fileID: 1715514352}
   - component: {fileID: 1715514351}
+  - component: {fileID: 1715514355}
   m_Layer: 5
   m_Name: BG Canvas
   m_TagString: Untagged
@@ -6392,6 +6316,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1715514355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715514349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049e4691e356d0c408ff029a8c9fa05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HappyBackgroundImage: {fileID: 21300000, guid: 6ad5462c62c272040b6b5236399cfc87, type: 3}
+  Background: {fileID: 199241518}
 --- !u!1 &1742998676
 GameObject:
   m_ObjectHideFlags: 0
@@ -6576,12 +6514,107 @@ MonoBehaviour:
   PlayerWallet: {fileID: 11400000, guid: 077dee6b9b4492b468ed70dd9539ddcc, type: 2}
   PayButton: {fileID: 1170845688}
   Dialogue: {fileID: 788024829}
+  OnAllQuestsFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1946289212}
+        m_TargetAssemblyTypeName: HomeCanvas, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1715514355}
+        m_TargetAssemblyTypeName: TownBackground, Assembly-CSharp
+        m_MethodName: LoadHappyBackground
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   QuestList:
   - Price: 100
-    Dialogue: 'Hello I would like 100 gold.
+    Dialogue: 'I''ma tellin'' ya, that dragon is up ta no good. He''s a stealin''
+      our taxes, burning our crops, poisoning our water supply, and deliverin'' plague
+      upon our houses!
 
-      Please, thank you!'
-    Response: Thanks for the 100 gold, buddy!
+
+
+      Proof? I don''t need no proof.
+
+      I need gold,
+      100 pieces, from the dragon.
+
+
+      - Crazy Randy'
+    Response: 'That''ll show ''em for abducting me and stealing my memories of it
+      too! You don''t know how much this means, sonny. Everyone else out here thinks
+      I''ma gone crazy. Now, here''s an anti-dragon hat specially made for you. Everyone
+      knows dragons hate tinfoil!
+
+
+      -Crazy Randy'
+  - Price: 500
+    Dialogue: "Oh dear, oh dear, I have awful news!\nMy idiotic butler bought a crate
+      of tea (the wrong tea, you see) he bought green tea. Can you believe it! I'm
+      a chamomile woman, isn't that obvious?\nHe bought 500G worth of the wretched
+      stuff. If you've got that much on you, I'll gladly fork it over...\n\n-Lady
+      G\xF6r"
+    Response: "What are you, some kind of tea freak? Not that I'm complaining, but
+      chamomile is clearly the superior choice!\n\nWell, I'm off to find another
+      butler.\n\nHey, you there! How would you like to-\n\n\n-Lady G\xF6r"
+  - Price: 1000
+    Dialogue: 'Oh hey, buddy! Been a while.
+
+      So you''re stealin'' from the
+      dragon and helping the townsfolk with your finds. Mighty generous of you, but
+      also mighty dangerous. Normally, I''d stop ya, but I ain''t doing so hot myself,
+      ya know? Lost my job and need 1000G to pay off a loan...
+
+
+      - Ryan'
+    Response: 'Thanks bud. You don''t know how much I needed this. I won''t soon
+      forget it.
+
+
+      I know you''ve got your own troubles to take care of. Your
+      own dragon to face, so to speak... Promise me you''ll make it out in one piece?
+
+
+      -
+      Ryan'
+  - Price: 5000
+    Dialogue: "Hiya! I'm Timmy! My Daddy's da mayor! Daddy needs me to tell ya somethin
+      cuz he\u2019s busy right now. This is my little cow, Freddie! Dad said we need
+      5000G because Um.. uhhh\u2026 I\u2019m sorry, I forgot. He said it was very
+      important! And Daddy wants you to pay for it.\n\n- Timmy"
+    Response: 'Daddy''s gonna be so happy!
+
+      Now he can pay for...
+
+      Oh
+      I remember now!
+
+      He said he was building a shop.
+
+      A butchie shop!
+
+
+      What''s
+      a butchie shop?
+
+
+
+      -Timmy'
 --- !u!1 &1767110436
 GameObject:
   m_ObjectHideFlags: 0
@@ -7171,7 +7204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DragonScene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
   HomePanel: {fileID: 1925966842}
-  StartingYPos: -1000
+  StartingYPos: -1200
   AnimTime: 0.5
 --- !u!1 &1991320438
 GameObject:

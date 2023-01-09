@@ -11,11 +11,26 @@ public class HomeCanvas : MonoBehaviour
 
     void Start()
     {
-        HomePanel.DOLocalMoveY(HomePanel.localPosition.y, AnimTime).From(StartingYPos);
+        EnterAnimation();
+    }
+
+    public Tween EnterAnimation()
+    {
+        return HomePanel.DOLocalMoveY(HomePanel.localPosition.y, AnimTime).From(StartingYPos);
+    }
+
+    public Tween ExitAnimation()
+    {
+        return HomePanel.DOLocalMoveY(StartingYPos, AnimTime);
     }
 
     public void EnterTheDragon()
     {
-        SceneManager.LoadScene(DragonScene.name);
+        ExitAnimation().OnComplete(()=> SceneManager.LoadScene(DragonScene.name));
+    }
+
+    public void ClosePanel()
+    {
+        ExitAnimation();
     }
 }
