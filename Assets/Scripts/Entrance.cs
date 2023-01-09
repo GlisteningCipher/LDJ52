@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class Entrance : MonoBehaviour
 {
-    [SerializeField] Object HomeScene;
     [SerializeField] Wallet Wallet;
     [SerializeField] Globals globals;
 
@@ -11,6 +10,6 @@ public class Entrance : MonoBehaviour
     {
         globals.suspicion += Wallet.LairGold / 4;
         Wallet.StoreGoldAtHome();
-        SceneManager.LoadScene(HomeScene.name);
+        SceneManager.LoadScene("HomeScene");
     }
 }

@@ -4,7 +4,6 @@ using DG.Tweening;
 
 public class HomeCanvas : MonoBehaviour
 {
-    [SerializeField] Object DragonScene;
     [SerializeField] RectTransform HomePanel;
     [SerializeField] float StartingYPos;
     [SerializeField] float AnimTime = 0.5f;
@@ -26,7 +25,7 @@ public class HomeCanvas : MonoBehaviour
 
     public void EnterTheDragon()
     {
-        ExitAnimation().OnComplete(()=> SceneManager.LoadScene(DragonScene.name));
+        ExitAnimation().OnComplete(()=> SceneManager.LoadScene("DragonScene"));
     }
 
     public void ClosePanel()
