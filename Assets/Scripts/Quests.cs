@@ -20,15 +20,16 @@ public class Quests : MonoBehaviour
 
     void Awake()
     {
-        if (G.questIndex >= QuestList.Count)
-        {
-            PayButton.interactable = false;
-            Dialogue.text = "No more quests!";
-        }
-
-        PayButton.interactable = PlayerWallet.HomeGold >= QuestList[G.questIndex].Price;
         PayButton.onClick.AddListener(SubmitQuest);
         Dialogue.text = QuestList[G.questIndex].Dialogue;
+    }
+
+    void Update()
+    {
+        if (G.questIndex < QuestList.Count)
+            PayButton.interactable = PlayerWallet.HomeGold >= QuestList[G.questIndex].Price;
+        else
+            PayButton.interactable = true;
     }
 
     void SubmitQuest()

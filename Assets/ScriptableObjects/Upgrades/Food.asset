@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globals: {fileID: 11400000, guid: 2e66629859c84af4abf9e08129b1ca9e, type: 2}
   wallet: {fileID: 11400000, guid: 077dee6b9b4492b468ed70dd9539ddcc, type: 2}
-  Price: 0
+  Price: 50

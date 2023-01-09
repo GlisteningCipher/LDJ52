@@ -2848,7 +2848,7 @@ MonoBehaviour:
   wellFedMaxDrag: 300
   regularMaxDrag: 500
   speedUpgradeMultiplier: 1.5
-  quietMultiplier: 0.5
+  quietMultiplier: 0.33
   walkingSFX:
     Guid:
       Data1: 316721863
@@ -5124,11 +5124,11 @@ RectTransform:
   m_Father: {fileID: 1561045016}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -169.79175, y: 50}
-  m_SizeDelta: {x: 339.5835, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 80, y: 0}
+  m_SizeDelta: {x: 340, y: 100}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1932579541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5147,7 +5147,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: -20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
