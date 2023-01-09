@@ -9,6 +9,7 @@ public class AlertBar : MonoBehaviour
     [Range(0f, 100f)]
     [SerializeField] public float alertness;
     Slider alertBar;
+    [SerializeField] Slider suspiciousBar;
 
     [SerializeField] GameObject dragon;
     [SerializeField] DragonController dragonController;
@@ -21,30 +22,21 @@ public class AlertBar : MonoBehaviour
     void Awake()
     {
         alertBar = GetComponent<Slider>();
-        alertBar.value = 0f;
-        //toggleVisibility(debug ? true : false);
+        //alertBar.value = 0f;
+        alertness = globals.suspicion / 4;
+        alertBar.value = globals.suspicion / 4;
+        suspiciousBar.value = globals.suspicion / 4;
     }
 
     void Update()
     {
         if(alertness >= 100)
-        {
             Alert();
-        }
-
-        //Debug.Log(distanceToDragon());
-        //if(!debug) toggleVisibility(distanceToDragon() <= 20 ? true : false);
     }
 
     float distanceToDragon()
     {
         return (player.transform.position - dragon.transform.position).magnitude;
-    }
-
-    void toggleVisibility(bool v)
-    {
-        foreach (Transform ch in transform)
-            ch.gameObject.SetActive(v);
     }
 
     public void Increase(float a)
@@ -91,9 +83,9 @@ public class AlertBar : MonoBehaviour
         }
         else
         {
-            Debug.Log("GAME OVER");
+            //Debug.Log("GAME OVER");
             gameOverAnim.SetBool("isGameOver", true);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1.5f);
             SceneManager.LoadScene("GameOverScene");
         }
         coroutine = null;

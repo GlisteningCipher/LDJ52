@@ -30,5 +30,6 @@ public class Wallet : ScriptableObject
     {
         HomeGold += LairGold;
         LairGold = 0;
+        G.suspicion += LairGold / 4;
     }
 }

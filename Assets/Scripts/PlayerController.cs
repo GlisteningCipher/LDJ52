@@ -4,6 +4,7 @@ using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 using DG.Tweening;
+using TMPro;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] SpriteRenderer sprite;
     [SerializeField] GameObject hiddenIcon;
     public bool isPlayerHidden = false;
+    [SerializeField] TextMeshProUGUI goldText;
 
     [Header ("Speed Settings")]
     [SerializeField] float verticalSpeed;
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         hiddenIcon.SetActive(false);
+        goldText.text = "000";
     }
 
 
@@ -88,7 +91,9 @@ public class PlayerController : MonoBehaviour
 
     public void CollectGold(int gold)
     {
-        Debug.Log("Collected " + gold + " gold!");
+        //Debug.Log("Collected " + gold + " gold!");
+        int g = int.Parse(goldText.text) + gold;
+        goldText.text = g.ToString("D3");
         wallet.AddLairGold(gold);
         alertBar.Increase(gold / 4);
         var upperDrag = globals.wellFed ? wellFedMaxDrag : regularMaxDrag;
