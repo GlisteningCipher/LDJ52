@@ -16,7 +16,7 @@ public class GoldNest : MonoBehaviour
     {
         if (atTheNest && Input.GetButtonDown("Fire1"))
         {
-            pl.CollectGold(Random.Range(0f, 1f) > .5f ? 25 : 50);
+            pl.CollectGold(Random.Range(0f, 1f) > .5f ? 50 : 75);
             RuntimeManager.PlayOneShotAttached(goldSFX, gameObject);
         }
     }
