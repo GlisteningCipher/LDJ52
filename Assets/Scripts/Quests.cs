@@ -48,6 +48,12 @@ public class Quests : MonoBehaviour
             PayButton.onClick.AddListener(()=>OnAllQuestsFinished.Invoke());
         }
     }
+
+    // [ContextMenu("Win")]
+    // void TriggerWin()
+    // {
+    //     OnAllQuestsFinished.Invoke();
+    // }
 }
 
 [Serializable]
