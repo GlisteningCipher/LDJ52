@@ -1579,7 +1579,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.888889, y: 0, z: -10}
+  m_LocalPosition: {x: -12.179203, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2638,7 +2638,7 @@ MonoBehaviour:
   m_Texture: {fileID: 2800000, guid: e9a06874ab0f79f43ba16cb7b29513ae, type: 3}
   m_UVRect:
     serializedVersion: 2
-    x: 0.5
+    x: 0.45372996
     y: 0
     width: 0.5
     height: 1
@@ -2667,7 +2667,7 @@ MonoBehaviour:
   MinXPos: -44.444443
   MaxXPos: -8.888889
   ScreensWide: 2
-  Scroll: 1
+  Scroll: 0.9074599
 --- !u!1 &865655059
 GameObject:
   m_ObjectHideFlags: 0
@@ -2847,6 +2847,7 @@ MonoBehaviour:
   wellFedMaxDrag: 300
   regularMaxDrag: 500
   speedUpgradeMultiplier: 1.5
+  quietMultiplier: 0.5
   walkingSFX:
     Guid:
       Data1: 316721863
@@ -3141,7 +3142,7 @@ MonoBehaviour:
   MinXPos: -44.444443
   MaxXPos: -8.888889
   ScreensWide: 4
-  Scroll: 1
+  Scroll: 0.9074599
 --- !u!114 &931442444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3165,7 +3166,7 @@ MonoBehaviour:
   m_Texture: {fileID: 2800000, guid: 856dbd0dd938d354297c4b9d05184718, type: 3}
   m_UVRect:
     serializedVersion: 2
-    x: 0.75
+    x: 0.6805949
     y: 0
     width: 0.25
     height: 1
@@ -5533,11 +5534,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadEvent: 1
-  UnloadEvent: 2
+  UnloadEvent: 0
   Banks:
   - Master
   CollisionTag: 
-  PreloadSamples: 0
+  PreloadSamples: 1
 --- !u!4 &2105703795
 Transform:
   m_ObjectHideFlags: 0
